@@ -5,7 +5,7 @@ metadata:
   labels:
     app: edge-proxy
 spec:
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       labels:
@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: edge-proxy
-        image: eu.gcr.io/mimir-185212/edge-proxy:0.1
+        image: eu.gcr.io/mimir-185212/edge-proxy:0.1-DEV
         ports:
         - containerPort: 8080
           name: svc-port
@@ -27,3 +27,6 @@ spec:
             path: /health
             port: svc-port
           initialDelaySeconds: 20
+      imagePullSecrets:
+      - name: gcr-json-key
+      imagePullPolicy: Always

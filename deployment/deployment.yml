@@ -27,6 +27,6 @@ spec:
             path: /health
             port: svc-port
           initialDelaySeconds: 20
+        imagePullPolicy: Always
       imagePullSecrets:
       - name: gcr-json-key
-      imagePullPolicy: Always

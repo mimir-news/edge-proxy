@@ -4,7 +4,13 @@ metadata:
   name: edge-proxy
 spec:
   ports:
-    - port: 8080
+    - name: http-port
+      port: 80
+      targetPort: 8080
+      protocol: TCP
+    - name: https-port
+      port: 443
+      targetPort: 8080
       protocol: TCP
   selector:
     app: edge-proxy

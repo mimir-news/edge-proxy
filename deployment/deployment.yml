@@ -1,7 +1,7 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: edge-proxy-deployment
+  name: edge-proxy
   labels:
     app: edge-proxy
 spec:
